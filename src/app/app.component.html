@@ -1,6 +1,18 @@
 <form [formGroup]="myForm">
-    <app-custom-input label="Username" controlName="username" [form]="myForm" [validations]="validations"></app-custom-input>
-    <app-custom-input label="Password" controlName="password" [form]="myForm" [validations]="validations"></app-custom-input>
-  </form>
-  <app-button (click)="submit()"></app-button>
-  <div *ngIf="show">{{this.myForm.value.username}}</div>
+  <app-custom-input
+    type="text"
+    label="Username"
+    controlName="username"
+    [form]="myForm"
+    [validations]="validations"
+  ></app-custom-input>
+  <app-custom-input
+    type="text"
+    label="Password"
+    controlName="password"
+    [form]="myForm"
+    [validations]="validations"
+  ></app-custom-input>
+</form>
+<app-button (click)="submit()"></app-button>
+<div *ngIf="show">{{ this.myForm.value.username }}</div>
