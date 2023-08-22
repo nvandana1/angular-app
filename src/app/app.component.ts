@@ -25,7 +25,6 @@ export class AppComponent {
         task: this.myForm.value.task,
         status: 'Not Done',
       });
-      console.log(this.tasks);
     }
   }
 }

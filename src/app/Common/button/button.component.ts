@@ -7,5 +7,6 @@ import { Component, Input } from '@angular/core';
 })
 export class ButtonsComponent {
   @Input() label:string ='';
+  @Input() class:string ='';
 
 }

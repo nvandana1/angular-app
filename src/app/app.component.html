@@ -1,17 +1,27 @@
-<form [formGroup]="myForm">
-  <app-custom-input
-    type="text"
-    label="Task"
-    controlName="task"
-    [form]="myForm"
-    [validations]="validations"
-  ></app-custom-input>
+<form [formGroup]="myForm" class="grid">
+  <div class="col-12">
+    <app-custom-input
+      type="text"
+      label="Task"
+      controlName="task"
+      [form]="myForm"
+      [validations]="validations"
+      class="p-1"
+    ></app-custom-input>
+    <app-button
+      (click)="submit()"
+      [class]="'p-button-success col g-1'"
+      [label]="'Submit'"
+    ></app-button>
+    <div *ngIf="myForm.get('task')?.errors && show" class="error col">
+      This field is required.
+    </div>
+    
+  </div>
+  <div class="col">
+    <h1 *ngIf="tasks.length>0">Tasks</h1>
+    <div *ngFor="let task of tasks" class="card p-2">
+      <app-card [tasks]="task" [allTasks]="tasks"></app-card>
+    </div>
+  </div>
 </form>
-<app-button (click)="submit()" [label]="'Submit'"></app-button>
-<div *ngIf="myForm.get('task')?.errors && show" class="error">
-  This field is required.
-</div>
-
-<div *ngFor="let task of tasks" class="card">
-  <app-card [tasks]="task" [allTasks]="tasks"></app-card>
-</div>

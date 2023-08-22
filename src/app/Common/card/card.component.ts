@@ -17,7 +17,6 @@ export class CardComponent {
     else{
       this.service.markTaskAsDone(this.allTasks,this.tasks,'Not Done');
     }
-    console.log(this.tasks);
 
   }
 }
