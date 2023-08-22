@@ -1,0 +1,6 @@
+<div [formGroup]="form">
+    <input pInputText [placeholder]="label" [formControlName]="controlName">
+</div>
+<div *ngIf="form.get(controlName)?.errors" class="error">
+    This field is required.
+  </div>

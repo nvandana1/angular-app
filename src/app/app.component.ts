@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -6,8 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-submit() {
-throw new Error('Method not implemented.');
-}
+
   title = 'angular-app';
+  myForm: FormGroup;
+  show:any;
+  validations:any;
+  constructor(private fb: FormBuilder) {
+    this.validations = Validators.required;
+    this.myForm = this.fb.group({});
+  }
+
+  submit() {
+    this.show = true;
+    }
 }

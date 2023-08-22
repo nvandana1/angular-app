@@ -4,20 +4,21 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
+import { ButtonsModule } from './Common/button/button.module';
+import { CustomInputComponent } from './Common/custom-input/custom-input.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent, CustomInputComponent],
+  providers: [],
+  bootstrap: [AppComponent],
   imports: [
     BrowserModule,
-    ButtonModule,
     AppRoutingModule,
-    InputTextModule
+    InputTextModule,
+    ButtonsModule,
+    ReactiveFormsModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
