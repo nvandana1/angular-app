@@ -8,6 +8,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class CustomInputComponent {
   @Input() label!: string;
+  @Input() type!: string;
   @Input() controlName!: string;
   @Input() form!: FormGroup;
   @Input() validations!: FormGroup;

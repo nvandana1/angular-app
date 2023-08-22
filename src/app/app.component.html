@@ -1,18 +1,17 @@
 <form [formGroup]="myForm">
   <app-custom-input
     type="text"
-    label="Username"
-    controlName="username"
-    [form]="myForm"
-    [validations]="validations"
-  ></app-custom-input>
-  <app-custom-input
-    type="text"
-    label="Password"
-    controlName="password"
+    label="Task"
+    controlName="task"
     [form]="myForm"
     [validations]="validations"
   ></app-custom-input>
 </form>
-<app-button (click)="submit()"></app-button>
-<div *ngIf="show">{{ this.myForm.value.username }}</div>
+<app-button (click)="submit()" [label]="'Submit'"></app-button>
+<div *ngIf="myForm.get('task')?.errors && show" class="error">
+  This field is required.
+</div>
+
+<div *ngFor="let task of tasks" class="card">
+  <app-card [tasks]="task" [allTasks]="tasks"></app-card>
+</div>

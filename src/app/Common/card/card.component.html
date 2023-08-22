@@ -1,0 +1,8 @@
+<p-card [header]="tasks.task"[style]="{width: 'width'}" styleClass="styleClass">
+    <div>Description : {{tasks.task}}</div>
+    <div> Status : {{tasks.status}} </div>
+    <p-footer>
+        <app-button *ngIf="tasks.status === 'Not Done'" [label]="'Mark Done'" (click)="setAsDone()"></app-button>
+        <app-button *ngIf="tasks.status === 'Done'" [label]="'Mark Pending'" (click)="setAsDone()"></app-button>
+    </p-footer>
+</p-card>
